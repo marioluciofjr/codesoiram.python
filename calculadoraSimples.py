@@ -35,8 +35,11 @@ while menu_calc != 7:
     elif menu_calc == 4:
         primeiro_num = float(input("Digite um número qualquer: "))
         segundo_num = float(input("Digite um número qualquer: "))
-        divide = primeiro_num / segundo_num
-        print(f"{primeiro_num} / {segundo_num} = ", divide)
+        try:
+            divide = primeiro_num / segundo_num
+            print(f"{primeiro_num} / {segundo_num} = ", divide)
+        except ZeroDivisionError:
+            print("\nPutz! Não é possível dividir por 0.")
         
     elif menu_calc == 5:
         num = float(input("Digite um número qualquer: "))
