@@ -1,5 +1,3 @@
-!pip install -q -U streamlit
-
 import streamlit as st
 
 st.title("Calculadora de Tabuada")
