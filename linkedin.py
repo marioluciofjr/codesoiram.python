@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 import google.generativeai as genai
-from google.colab import userdata
+# from google.colab import userdata
 import pdfquery
 
 def analisar_perfil(api_key, pdf_path):
