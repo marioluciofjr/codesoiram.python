@@ -11,21 +11,17 @@ def energy():
   # Importando os pacotes necessários
   from ecologits import EcoLogits
   from google import genai
+  from google.colab import userdata
+  import os
 
-  def api(secret: str):
-    from google.colab import userdata
-    import os
-
-    secret = input("Digite aqui o secret: ")
+  secret = input("Digite aqui o secret: ")
   
-    api_key = userdata.get(secret)
-    os.environ["GOOGLE_API_KEY"] = api_key
+  api_key = userdata.get(secret)
+  os.environ["GOOGLE_API_KEY"] = api_key
 
-    client = genai.Client(api_key=api_key)
+  client = genai.Client(api_key=api_key)
   
-    print("API configurada")
-
-api()  
+  print("API configurada") 
   
   # Iniciando o Ecologits
   EcoLogits.init(providers=["google_genai"])
