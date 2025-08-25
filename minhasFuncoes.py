@@ -7,6 +7,45 @@ def api(secret: str):
 
   print("API configurada")
 
+def energy():
+  # Importando os pacotes necessários
+  from ecologits import EcoLogits
+  from google import genai
+  
+  client = genai.Client(api_key=api_key)
+  
+  # Iniciando o Ecologits
+  EcoLogits.init(providers=["google_genai"])
+  
+  # Função do cálculo de consumo de energia e pegada de carbono
+  
+  def consumo_ai(prompt: str, model_name: str):
+    response = client.models.generate_content(
+    model=model_name,
+    contents=f"{prompt}"
+  )
+  
+    impacts = response.impacts
+  
+    resultado = (
+      f"### Resumo de Impacto para {model_name}\n\n"
+      f"ENERGIA:\n"
+      f"  - Mínimo: {impacts.energy.value.min:.2f} {impacts.energy.unit}\n"
+      f"  - Máximo: {impacts.energy.value.max:.2f} {impacts.energy.unit}\n\n"
+      f"GWP (PEGADA DE CARBONO):\n"
+      f"  - Mínimo: {impacts.gwp.value.min:.2f} {impacts.gwp.unit}\n"
+      f"  - Máximo: {impacts.gwp.value.max:.2f} {impacts.gwp.unit}\n"
+  )
+    print(resultado)
+
+  modelo_um = "gemini-2.5-flash"
+  modelo_dois = "gemini-2.5-pro"
+  
+  prompt = input("Coloque aqui o seu prompt: ")
+  
+  consumo_ai(prompt, modelo_um)
+  consumo_ai(prompt, modelo_dois)
+
 def corrigir_valor_inflacao():
   import pandas as pd
   import requests as rq
