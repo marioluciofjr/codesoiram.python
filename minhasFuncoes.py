@@ -19,9 +19,7 @@ def energy():
   api_key = userdata.get(secret)
   os.environ["GOOGLE_API_KEY"] = api_key
 
-  client = genai.Client(api_key=api_key)
-  
-  print("API configurada") 
+  client = genai.Client(api_key=api_key) 
   
   # Iniciando o Ecologits
   EcoLogits.init(providers=["google_genai"])
