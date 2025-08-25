@@ -23,7 +23,7 @@ def energy():
     response = client.models.generate_content(
     model=model_name,
     contents=f"{prompt}"
-  )
+    )
   
     impacts = response.impacts
   
@@ -35,16 +35,16 @@ def energy():
       f"GWP (PEGADA DE CARBONO):\n"
       f"  - Mínimo: {impacts.gwp.value.min:.2f} {impacts.gwp.unit}\n"
       f"  - Máximo: {impacts.gwp.value.max:.2f} {impacts.gwp.unit}\n"
-  )
+    )
     print(resultado)
 
-  modelo_um = "gemini-2.5-flash"
-  modelo_dois = "gemini-2.5-pro"
+    modelo_um = "gemini-2.5-flash"
+    modelo_dois = "gemini-2.5-pro"
   
-  prompt = input("Coloque aqui o seu prompt: ")
+    prompt = input("Coloque aqui o seu prompt: ")
   
-  consumo_ai(prompt, modelo_um)
-  consumo_ai(prompt, modelo_dois)
+    consumo_ai(prompt, modelo_um)
+    consumo_ai(prompt, modelo_dois)
 
 def corrigir_valor_inflacao():
   import pandas as pd
