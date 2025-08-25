@@ -15,6 +15,8 @@ def energy():
   def api(secret: str):
     from google.colab import userdata
     import os
+
+    secret = input("Digite aqui o secret: ")
   
     api_key = userdata.get(secret)
     os.environ["GOOGLE_API_KEY"] = api_key
@@ -23,7 +25,7 @@ def energy():
   
     print("API configurada")
 
-  api(input("Digite aqui o secret: "))  
+  api()  
   
   # Iniciando o Ecologits
   EcoLogits.init(providers=["google_genai"])
