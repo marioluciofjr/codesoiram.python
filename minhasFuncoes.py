@@ -11,6 +11,8 @@ def energy():
   # Importando os pacotes necessários
   from ecologits import EcoLogits
   from google import genai
+
+  api(input("coloque aqui o secret: "))
   
   client = genai.Client(api_key=api_key)
   
