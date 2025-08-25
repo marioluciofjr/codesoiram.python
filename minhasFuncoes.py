@@ -25,7 +25,7 @@ def energy():
   
     print("API configurada")
 
-  api()  
+api()  
   
   # Iniciando o Ecologits
   EcoLogits.init(providers=["google_genai"])
