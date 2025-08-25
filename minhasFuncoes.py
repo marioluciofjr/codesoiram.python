@@ -27,7 +27,7 @@ def corrigir_valor_inflacao():
 
   try:
     # Informação do ano inicial e do mês inicial para pegar o valor do índice respectivo
-    ano_inicial = input("Insira o ano inicial entre 1995 e 2023: ")
+    ano_inicial = input("Insira o ano inicial entre 1995 e 2025: ")
     mês_inicial = input("Insira o mês inicial (Coloque o zero na frente dos meses anteriores a outubro): ") # Coloque o zero na frente de janeiro a setembro
 
     data_inicial = str(ano_inicial+"."+mês_inicial)
@@ -38,7 +38,7 @@ def corrigir_valor_inflacao():
     indice_inicial
 
     # Informação do ano final e do mês final para pegar o valor do índice respectivo
-    ano_final = input("Insira o ano final entre 1995 e 2023: ")
+    ano_final = input("Insira o ano final entre 1995 e 2025: ")
     mês_final = input("Insira o mês final (Coloque o zero na frente dos meses anteriores a outubro): ") # Coloque o zero na frente de janeiro a setembro
   
     data_final = str(ano_final+"."+mês_final)
