@@ -100,7 +100,7 @@ def media_ponderada():
 
 def qrcode(texto: str):
   # 1ª etapa: Instale a biblioteca "qrcode"
-  !pip install -qU qrcode
+  # !pip install -qU qrcode
   
   # 2ª etapa: importe a biblioteca
   import qrcode
@@ -113,7 +113,7 @@ def qrcode(texto: str):
 
 def tabuada_cardinal_ordinal():
   # Instale a biblioteca num2words
-  !pip install -qU num2words
+  # !pip install -qU num2words
 
   # Importe o pacote necessário
   from num2words import num2words
