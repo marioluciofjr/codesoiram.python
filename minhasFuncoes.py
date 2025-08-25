@@ -12,7 +12,16 @@ def energy():
   from ecologits import EcoLogits
   from google import genai
 
-  api(input("coloque aqui o secret: "))
+  def api(secret: str):
+    from google.colab import userdata
+    import os
+  
+    api_key = userdata.get(secret)
+    os.environ["GOOGLE_API_KEY"] = api_key
+  
+    print("API configurada")
+
+  api(input("Digite aqui o secret: "))
   
   client = genai.Client(api_key=api_key)
   
@@ -40,13 +49,13 @@ def energy():
     )
     print(resultado)
 
-    modelo_um = "gemini-2.5-flash"
-    modelo_dois = "gemini-2.5-pro"
+  modelo_um = "gemini-2.5-flash"
+  modelo_dois = "gemini-2.5-pro"
   
-    prompt = input("Coloque aqui o seu prompt: ")
+  prompt = input("Coloque aqui o seu prompt: ")
   
-    consumo_ai(prompt, modelo_um)
-    consumo_ai(prompt, modelo_dois)
+  consumo_ai(prompt, modelo_um)
+  consumo_ai(prompt, modelo_dois)
 
 def corrigir_valor_inflacao():
   import pandas as pd
